@@ -8,37 +8,36 @@
 [![Join the chat at https://gitter.im/hexenq/kuroshiro](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/hexenq/kuroshiro)
 [![License](https://img.shields.io/github/license/lassjs/lass.svg)](LICENSE)
 
-kuroshiro is a Japanese language library for converting Japanese sentence to Hiragana, Katakana or Romaji with furigana and okurigana modes supported.
+kuroshiro estas Japanalingvo kodlibrejo por konverti Japanajn frazojn al Hiraganao, Katakanao aŭ Romaĝio, kaj ankaŭ subtenas furiganaon kaj okuriganaon.
 
-*Read this in other languages: [English](README.md), [日本語](README.jp.md), [简体中文](README.zh-cn.md), [繁體中文](README.zh-tw.md).*
+*Legi ĉi tiun per aliaj lingvoj: [English](README.md), [日本語](README.jp.md), [简体中文](README.zh-cn.md), [繁體中文](README.zh-tw.md).*
 
-## Demo
-You can check the demo [here](https://kuroshiro.org/#demo).
+## Ekzempla Paĝo
+Vidi la ekzemplan paĝon [ĉi tie](https://kuroshiro.org/#demo).
 
-## Feature
-- Japanese Sentence => Hiragana, Katakana or Romaji
-- Furigana and okurigana supported
-- 🆕Multiple morphological analyzers supported
-- 🆕Multiple romanization systems supported
-- Useful Japanese utils
+## Eblo
+- Japanalingva Frazo => Hiraganao, Katakanao aŭ Romaĝio
+- Furiganao kaj okuriganao modoj
+- 🆕Multaj lingvastrukturaj metodoj
+- 🆕Multaj romanaskriptkonvertaj sistemoj
+- Utilaj Japanalingvaj iloj
 
-## Breaking Change in 1.x
-- Seperate morphological analyzer from phonetic notation logic to make it possible that we can use different morphological analyzers ([ready-made](#ready-made-analyzer-plugins) or [customized](CONTRIBUTING.md#how-to-submit-new-analyzer-plugins))
-- Embrace ES8/ES2017 to use async/await functions
+## Gravaj Ŝanĝoj je 1.x
+- Aparta lingvasttrukturametoda ilo ekde fonetika notacia logiko por eblegi la uzaton de multaj lingvastrukturaj metodoj. ([finitaj iloj](#ready-made-analyzer-plugins) or [personigitaj iloj](CONTRIBUTING.md#how-to-submit-new-analyzer-plugins))
+- ES8/ES2017 por uzi "async/await" funkciojn
 - Use ES6 Module instead of CommonJS
     
-## Ready-made Analyzer Plugins
-*You should check the environment compatibility of each analyzer before you start working with them*
-
-| Analyzer | Node.js Support| Browser Support | Plugin Repo | Developer |
+## Finitah Analizilaj (Lingvastrukturaj) Iloj
+*Antau vi uzi ilon, bonvole certiĝi la mediakongruecon*
+| Analizilo | Node.js Uzadeblo | Retumilo Uzadeblo | Plugin Repo | Programisto |
 |---|---|---|---|---|
 |Kuromoji|✓|✓|[kuroshiro-analyzer-kuromoji](https://github.com/hexenq/kuroshiro-analyzer-kuromoji)|[Hexen Qi](https://github.com/hexenq)|
 |Mecab|✓|✗|[kuroshiro-analyzer-mecab](https://github.com/hexenq/kuroshiro-analyzer-mecab)|[Hexen Qi](https://github.com/hexenq)|
 |Yahoo Web API|✓|✗|[kuroshiro-analyzer-yahoo-webapi](https://github.com/hexenq/kuroshiro-analyzer-yahoo-webapi)|[Hexen Qi](https://github.com/hexenq)|
 
-## Usage
-### Node.js (or using a module bundler (e.g. Webpack))
-Install with npm package manager:
+## Uzado
+### Node.js (aŭ per "module bundler"-ilo (kiel Webpack))
+Instali per npm pako-administrilo:
 ```sh
 $ npm install kuroshiro
 ```

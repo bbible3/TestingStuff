@@ -15,7 +15,7 @@ kuroshiro estas Japanalingvo kodlibrejo por konverti Japanajn frazojn al Hiragan
 ## Ekzempla Paĝo
 Vidi la ekzemplan paĝon [ĉi tie](https://kuroshiro.org/#demo).
 
-## Eblo
+## Elementoj
 - Japanalingva Frazo => Hiraganao, Katakanao aŭ Romaĝio
 - Furiganao kaj okuriganao modoj
 - 🆕Multaj lingvastrukturaj metodoj

@@ -42,52 +42,52 @@ Instali per npm pako-administrilo:
 $ npm install kuroshiro
 ```
     
-Load the library:
+Ŝargi la kodotekon:
 
-*Support both ES6 Module `import` and CommonJS `require`*
+*Subtenas ambaŭ "ES6 Module" `import` kaj "CommonJS" `require`*
 ```js
 import Kuroshiro from "kuroshiro";
 ```
 
-Instantiate:
+Generi:
 ```js
 const kuroshiro = new Kuroshiro();
 ```
 
-Initialize kuroshiro with an instance of analyzer (You could check the [apidoc](#initanalyzer) for more information):
+Iniciati kuroshiro kun genero de analizilo (Rigardi [apidoc](#initanalyzer) por vidi pli da informacio):
 ```js
-// For this example, you should npm install and import the kuromoji analyzer first
+// Por ĉi tiu ekzemplo, vi devus fari npm install kaj importi la "kuromoji" analizilon unue.
 import KuromojiAnalyzer from "kuroshiro-analyzer-kuromoji";
 
 // ...
 
-// Initialize
-// Here uses async/await, you could also use Promise
+// Ŝargi
+// Ĉi tio uzas async/await, sed vi ankaŭ povus uzi Promise
 await kuroshiro.init(new KuromojiAnalyzer());
 ```
 
-Convert what you want:
+Konverti frazon:
 ```js
 const result = await kuroshiro.convert("感じ取れたら手を繋ごう、重なるのは人生のライン and レミリア最高！", { to: "hiragana" });
 ```
     
-### Browser
-Add `dist/kuroshiro.min.js` to your frontend project (you may first build it from source with `npm run build` after `npm install`), and in your HTML:
+### Retumilo
+Aldoni `dist/kuroshiro.min.js` al via "frontend-a projekto" (vi povas antaŭe kompili la originalan kodon per `npm run build` post `npm install`), kaj en via HTML:
 ```html
 <script src="url/to/kuroshiro.min.js"></script>
 ```
 
-For this example, you should also include `kuroshiro-analyzer-kuromoji.min.js` which you could get from [kuroshiro-analyzer-kuromoji](https://github.com/hexenq/kuroshiro-analyzer-kuromoji)
+Fari kiel ĉi tiun ekzemplo, vi devus ankaŭ inkluzivi `kuroshiro-analyzer-kuromoji.min.js` kiu vi povas atingi ĉe [kuroshiro-analyzer-kuromoji](https://github.com/hexenq/kuroshiro-analyzer-kuromoji)
 ```html
 <script src="url/to/kuroshiro-analyzer-kuromoji.min.js"></script>
 ```
 
-Instantiate:
+Ŝargi:
 ```js
 var kuroshiro = new Kuroshiro();
 ```
 
-Initialize kuroshiro with an instance of analyzer, then convert what you want:
+Iniciati kuroshiro per ŝargo de analizilo, poste konverti:
 ```js
 kuroshiro.init(new KuromojiAnalyzer({ dictPath: "url/to/dictFiles" }))
     .then(function () {
@@ -99,36 +99,35 @@ kuroshiro.init(new KuromojiAnalyzer({ dictPath: "url/to/dictFiles" }))
 ```
 
 ## API
-### Constructor
-__Examples__
+### Konstruilo
+__Ekzemploj__
 
 ```js
 const kuroshiro = new Kuroshiro();
 ```
 
-### Instance Medthods
+### Instancometodoj
 #### init(analyzer)
-Initialize kuroshiro with an instance of analyzer. You should first import an analyzer and initialize it. You can make use of the [Ready-made Analyzers](#ready-made-analyzer-plugins) listed above. And please refer to documentation of analyzers for analyzer initialization instructions
+Iniciati kuroshiro per instanco de analizilo. Vi devus unue importi analizilon kaj iniciati ĝin. Vi povas uzi la [finitaj-iloj](#ready-made-analyzer-plugins) skribita supre. Bonvole rigardu la analizilan dokumentaron por vidi instrukciojn.
 
-__Arguments__
+__Argumentoj__
 
-* `analyzer` - An instance of analyzer.
+* `analyzer` - Instanco de Analizilo.
 
-__Examples__
+__Ekzemploy__
 
 ```js
 await kuroshiro.init(new KuromojiAnalyzer());
 ```
 
 #### convert(str, [options])
-Convert given string to target syllabary with options available
+Konverti frazon al cela skribsistemo (kun agordoj)
+__Argumentoj__
 
-__Arguments__
+* `str` - Konvertvola Frazo.
+* `options` - *Optional* kuroshiro havas multajn frazajn konvertagordojn.
 
-* `str` - A String to be converted.
-* `options` - *Optional* kuroshiro has several convert options as below.
-
-| Options | Type | Default | Description |
+| Agordoj | Tajpo | Defaŭlto | Informacio |
 |---|---|---|---|
 | to | String | "hiragana" | Target syllabary [`hiragana`, `katakana`, `romaji`] |
 | mode | String | "normal" | Convert mode [`normal`, `spaced`, `okurigana`, `furigana`] |
@@ -136,105 +135,103 @@ __Arguments__
 | delimiter_start | String | "(" | Delimiter(Start) |
 | delimiter_end | String | ")" | Delimiter(End) |
 
-**: Param `romajiSystem` is only applied when the value of param `to` is `romaji`. For more about it, check [Romanization System](#romanization-system)*
+**: Param `romajiSystem` estas uzata sole kiam parametro `to` estas `romaji`. Por vidi plie, rigardu [Romanaskriptkonvertaj Sistemoj](#romanization-system)*
 
-__Examples__
+__Ekzemploj__
 
 ```js
 // normal
 await kuroshiro.convert("感じ取れたら手を繋ごう、重なるのは人生のライン and レミリア最高！", {mode:"okurigana", to:"hiragana"});
-// result：かんじとれたらてをつなごう、かさなるのはじんせいのライン and レミリアさいこう！
+// rezulto：かんじとれたらてをつなごう、かさなるのはじんせいのライン and レミリアさいこう！
 ```
 
 ```js
 // spaced
 await kuroshiro.convert("感じ取れたら手を繋ごう、重なるのは人生のライン and レミリア最高！", {mode:"okurigana", to:"hiragana"});
-// result：かんじとれ たら て を つなご う 、 かさなる の は じんせい の ライン   and   レミ リア さいこう ！
+// rezulto：かんじとれ たら て を つなご う 、 かさなる の は じんせい の ライン   and   レミ リア さいこう ！
 ```
 
 ```js
 // okurigana
 await kuroshiro.convert("感じ取れたら手を繋ごう、重なるのは人生のライン and レミリア最高！", {mode:"okurigana", to:"hiragana"});
-// result: 感(かん)じ取(と)れたら手(て)を繋(つな)ごう、重(かさ)なるのは人生(じんせい)のライン and レミリア最高(さいこう)！
+// rezulto: 感(かん)じ取(と)れたら手(て)を繋(つな)ごう、重(かさ)なるのは人生(じんせい)のライン and レミリア最高(さいこう)！
 ```
 
 <pre>
 // furigana
 await kuroshiro.convert("感じ取れたら手を繋ごう、重なるのは人生のライン and レミリア最高！", {mode:"furigana", to:"hiragana"});
-// result: <ruby>感<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>じ<ruby>取<rp>(</rp><rt>と</rt><rp>)</rp></ruby>れたら<ruby>手<rp>(</rp><rt>て</rt><rp>)</rp></ruby>を<ruby>繋<rp>(</rp><rt>つな</rt><rp>)</rp></ruby>ごう、<ruby>重<rp>(</rp><rt>かさ</rt><rp>)</rp></ruby>なるのは<ruby>人生<rp>(</rp><rt>じんせい</rt><rp>)</rp></ruby>のライン and レミリア<ruby>最高<rp>(</rp><rt>さいこう</rt><rp>)</rp></ruby>！
+// rezulto: <ruby>感<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>じ<ruby>取<rp>(</rp><rt>と</rt><rp>)</rp></ruby>れたら<ruby>手<rp>(</rp><rt>て</rt><rp>)</rp></ruby>を<ruby>繋<rp>(</rp><rt>つな</rt><rp>)</rp></ruby>ごう、<ruby>重<rp>(</rp><rt>かさ</rt><rp>)</rp></ruby>なるのは<ruby>人生<rp>(</rp><rt>じんせい</rt><rp>)</rp></ruby>のライン and レミリア<ruby>最高<rp>(</rp><rt>さいこう</rt><rp>)</rp></ruby>！
 </pre>
 
-### Utils
-__Examples__
+### Utilecoj
+__Ekzemploj__
 ```js
 const result = Kuroshiro.Util.isHiragana("あ"));
 ```
 #### isHiragana(char)
-Check if input char is hiragana.
+Determini se eniga litero estas hiragana.
 
 #### isKatakana(char)
-Check if input char is katakana.
+Determini se eniga litero estas katakana.
 
 #### isKana(char)
-Check if input char is kana.
+Determini se eniga litero estas kana.
 
 #### isKanji(char)
-Check if input char is kanji.
+Determini se eniga litero estas kanĵio.
 
 #### isJapanese(char)
-Check if input char is Japanese.
+Determini se eniga litero estas Japanolingva.
 
 #### hasHiragana(str)
-Check if input string has hiragana.
+Determini se eniga frazo enhavas hiraganan.
 
 #### hasKatakana(str)
-Check if input string has katakana.
+Determini se eniga frazo enhavas katakanan.
 
 #### hasKana(str)
-Check if input string has kana.
+Determini se eniga frazo enhavas kanan.
 
 #### hasKanji(str)
-Check if input string has kanji.
+Determini se eniga frazo enhavas kanĵion.
 
 #### hasJapanese(str)
-Check if input string has Japanese.
+Determini se eniga frazo enhavas Japanolingvajn Frazojn.
 
 #### kanaToHiragna(str)
-Convert input kana string to hiragana.
+Konverti enigan kanan frazon al hiragana
 
 #### kanaToKatakana(str)
-Convert input kana string to katakana.
+Konverti enigan kanan frazon al katakana.
 
 #### kanaToRomaji(str, system)
-Convert input kana string to romaji. Param `system` accepts `"nippon"`, `"passport"`, `"hepburn"` (Default: "hepburn"). 
+Konverti enigan kanan frazon al romaĝio. Param `system` povas enhavi `"nippon"`, `"passport"`, `"hepburn"` (Defaŭlta: "hepburn").
 
-## Romanization System
-kuroshiro supports three kinds of romanization systems.
+## Romanaskriptkonvertaj Sistemoj
+kuroshiro povas uzi tri da Romanaskriptkonvertajn Sistemojn.
 
-`nippon`: Nippon-shiki romanization. Refer to [ISO 3602 Strict](http://www.age.ne.jp/x/nrs/iso3602/iso3602.html).
+`nippon`: Nippon-shiki sistemo. Rigardu [ISO 3602 Strict](http://www.age.ne.jp/x/nrs/iso3602/iso3602.html).
 
-`passport`: Passport-shiki romanization. Refer to [Japanese romanization table](https://www.ezairyu.mofa.go.jp/passport/hebon.html) published by Ministry of Foreign Affairs of Japan.
+`passport`: Passport-shiki sistemo. Rigardu [Japanese romanization table](https://www.ezairyu.mofa.go.jp/passport/hebon.html) de la "Japana Ministerio de Eksteraj Aferoj".
 
-`hepburn`: Hepburn romanization. Refer to [BS 4812 : 1972](https://archive.is/PiJ4).
+`hepburn`: Hepburn sistemo. Rigardu [BS 4812 : 1972](https://archive.is/PiJ4).
 
-There is a useful [webpage](http://jgrammar.life.coocan.jp/ja/data/rohmaji2.htm) for you to check the difference between these romanization systems.
+Por vidi la malsamecoj de la tri sistemoj, rigardu [webpage](http://jgrammar.life.coocan.jp/ja/data/rohmaji2.htm).
 
-### Notice for Romaji Conversion
-Since it's impossible to fully automatically convert __furigana__ directly to __romaji__ because furigana lacks information on pronunciation (Refer to [なぜ フリガナでは ダメなのか？](https://green.adam.ne.jp/roomazi/onamae.html#naze)). 
+### Informacio pri Romaĝia Konvertado
+Ne eblas tute konverti __furigana__ precize al __romaĝio__ ĉar furigana ne enhavas kompletan prononcan informacion, (Rigardu [なぜ フリガナでは ダメなのか？](https://green.adam.ne.jp/roomazi/onamae.html#naze)) do kuroshiro ne konvertas chōon dum konvertado ekde furigana (kana) -> romaĝio je ĉiom da sistemoj (Sed, Chōonpu ĉiam konvertas) 
 
-kuroshiro will not handle chōon when processing directly furigana (kana) -> romaji conversion with every romanization system (Except that Chōonpu will be handled) 
+*Ekzemple, vi vidos "kousi", "koushi", "koushi" dum kana konvertado de "こうし" al romaĝio 
+kiam vi uzas `nippon`, `passport`, `hepburn` sistemojn respektive*
 
-*For example, you'll get "kousi", "koushi", "koushi" respectively when converts kana "こうし" to romaji 
-using `nippon`, `passport`, `hepburn` romanization system.*
-
-The kanji -> romaji conversion with/without furigana mode is __unaffected__ by this logic.
+Kanĝip -> romaĝio konvertado __ne estas afektita__.
 
 ## Contributing
-Please check [CONTRIBUTING](CONTRIBUTING.md).
+Rigardu [CONTRIBUTING](CONTRIBUTING.md).
 
-## Inspired By
+## Inspiroj
 - kuromoji
 - wanakana
 
-## License
+## Licenco
 MIT

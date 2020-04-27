@@ -226,7 +226,7 @@ kiam vi uzas `nippon`, `passport`, `hepburn` sistemojn respektive*
 
 Kanĝip -> romaĝio konvertado __ne estas afektita__.
 
-## Contributing
+## Kontribui
 Rigardu [CONTRIBUTING](CONTRIBUTING.md).
 
 ## Inspiroj

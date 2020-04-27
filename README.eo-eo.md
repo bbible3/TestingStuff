@@ -122,6 +122,7 @@ await kuroshiro.init(new KuromojiAnalyzer());
 
 #### convert(str, [options])
 Konverti frazon al cela skribsistemo (kun agordoj)
+
 __Argumentoj__
 
 * `str` - Konvertvola Frazo.

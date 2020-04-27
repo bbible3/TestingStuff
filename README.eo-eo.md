@@ -23,7 +23,7 @@ Vidi la ekzemplan paĝon [ĉi tie](https://kuroshiro.org/#demo).
 - Utilaj Japanalingvaj iloj
 
 ## Gravaj Ŝanĝoj je 1.x
-- Aparta lingvasttrukturametoda ilo ekde fonetika notacia logiko por eblegi la uzaton de multaj lingvastrukturaj metodoj. ([finitaj iloj](#ready-made-analyzer-plugins) or [personigitaj iloj](CONTRIBUTING.md#how-to-submit-new-analyzer-plugins))
+- Aparta lingvasttrukturametoda ilo kaj fonetika notacia logiko por eblegi la uzaton de multaj lingvastrukturaj metodoj. ([finitaj iloj](#ready-made-analyzer-plugins) or [personigitaj iloj](CONTRIBUTING.md#how-to-submit-new-analyzer-plugins))
 - ES8/ES2017 por uzi "async/await" funkciojn
 - Use ES6 Module instead of CommonJS
     
@@ -219,7 +219,7 @@ kuroshiro povas uzi tri da Romanaskriptkonvertajn Sistemojn.
 Por vidi la malsamecoj de la tri sistemoj, rigardu [webpage](http://jgrammar.life.coocan.jp/ja/data/rohmaji2.htm).
 
 ### Informacio pri Romaĝia Konvertado
-Ne eblas tute konverti __furigana__ precize al __romaĝio__ ĉar furigana ne enhavas kompletan prononcan informacion, (Rigardu [なぜ フリガナでは ダメなのか？](https://green.adam.ne.jp/roomazi/onamae.html#naze)) do kuroshiro ne konvertas chōon dum konvertado ekde furigana (kana) -> romaĝio je ĉiom da sistemoj (Sed, Chōonpu ĉiam konvertas) 
+Ne eblas tute konverti __furigana__ precize al __romaĝio__ ĉar furigana ne enhavas kompletan prononcan informacion, (Rigardu [なぜ フリガナでは ダメなのか？](https://green.adam.ne.jp/roomazi/onamae.html#naze)) do kuroshiro ne konvertas chōon dum konvertado el furigana (kana) -> romaĝio je ĉiom da sistemoj (Sed, Chōonpu ĉiam konvertas) 
 
 *Ekzemple, vi vidos "kousi", "koushi", "koushi" dum kana konvertado de "こうし" al romaĝio 
 kiam vi uzas `nippon`, `passport`, `hepburn` sistemojn respektive*

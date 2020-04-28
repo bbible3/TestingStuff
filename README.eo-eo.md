@@ -25,10 +25,10 @@ Vidi la ekzemplan paĝon [ĉi tie](https://kuroshiro.org/#demo).
 ## Gravaj Ŝanĝoj je 1.x
 - Aparta lingvasttrukturametoda ilo kaj fonetika notacia logiko por eblegi la uzaton de multaj lingvastrukturaj metodoj. ([finitaj iloj](#ready-made-analyzer-plugins) or [personigitaj iloj](CONTRIBUTING.md#how-to-submit-new-analyzer-plugins))
 - ES8/ES2017 por uzi "async/await" funkciojn
-- Use ES6 Module instead of CommonJS
+- Uzu la modulon ES6 anstataŭ CommonJS
     
-## Finitah Analizilaj (Lingvastrukturaj) Iloj
-*Antau vi uzi ilon, bonvole certiĝi la mediakongruecon*
+## Finitaj Analizilaj (Lingvastrukturaj) Iloj
+*Antaŭ uzi ilon, bonvolu certiĝi pri mediakongrueco*
 | Analizilo | Node.js Uzadeblo | Retumilo Uzadeblo | Plugin Repo | Programisto |
 |---|---|---|---|---|
 |Kuromoji|✓|✓|[kuroshiro-analyzer-kuromoji](https://github.com/hexenq/kuroshiro-analyzer-kuromoji)|[Hexen Qi](https://github.com/hexenq)|
@@ -54,7 +54,7 @@ Generi:
 const kuroshiro = new Kuroshiro();
 ```
 
-Iniciati kuroshiro kun genero de analizilo (Rigardi [apidoc](#initanalyzer) por vidi pli da informacio):
+Iniciati kuroshiro kun genero de analizilo (Rigardu la dokumenton [apidoc](#initanalyzer) por vidi pli da informacio):
 ```js
 // Por ĉi tiu ekzemplo, vi devus fari npm install kaj importi la "kuromoji" analizilon unue.
 import KuromojiAnalyzer from "kuroshiro-analyzer-kuromoji";
@@ -77,7 +77,7 @@ Aldoni `dist/kuroshiro.min.js` al via "frontend-a projekto" (vi povas antaŭe ko
 <script src="url/to/kuroshiro.min.js"></script>
 ```
 
-Fari kiel ĉi tiun ekzemplo, vi devus ankaŭ inkluzivi `kuroshiro-analyzer-kuromoji.min.js` kiu vi povas atingi ĉe [kuroshiro-analyzer-kuromoji](https://github.com/hexenq/kuroshiro-analyzer-kuromoji)
+Por fari kiel en ĉi ekzemplo, vi devas ankaŭ inkluzivi `kuroshiro-analyzer-kuromoji.min.js` kiu vi povas preni ĉe [kuroshiro-analyzer-kuromoji](https://github.com/hexenq/kuroshiro-analyzer-kuromoji)
 ```html
 <script src="url/to/kuroshiro-analyzer-kuromoji.min.js"></script>
 ```

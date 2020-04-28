@@ -1,6 +1,6 @@
 ![kuroshiro](https://kuroshiro.org/kuroshiro.png)
 
-# kuroshiro
+# Kuroshiro
 
 [![Build Status](https://travis-ci.org/hexenq/kuroshiro.svg?branch=master)](https://travis-ci.org/hexenq/kuroshiro)
 [![Coverage Status](https://coveralls.io/repos/hexenq/kuroshiro/badge.svg)](https://coveralls.io/r/hexenq/kuroshiro)
@@ -8,7 +8,7 @@
 [![Join the chat at https://gitter.im/hexenq/kuroshiro](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/hexenq/kuroshiro)
 [![License](https://img.shields.io/github/license/lassjs/lass.svg)](LICENSE)
 
-kuroshiro estas Japanalingvo kodlibrejo por konverti Japanajn frazojn al Hiraganao, Katakanao aŭ Romaĝio, kaj ankaŭ subtenas furiganaon kaj okuriganaon.
+la Kuroshiro estas Japanalingvo kodlibrejo por konverti Japanajn frazojn al Hiraganao, Katakanao aŭ Romaĝio, kaj ankaŭ subtenas furiganaon kaj okuriganaon.
 
 *Legi ĉi tiun per aliaj lingvoj: [English](README.md), [日本語](README.jp.md), [简体中文](README.zh-cn.md), [繁體中文](README.zh-tw.md).*
 
@@ -54,7 +54,7 @@ Generi:
 const kuroshiro = new Kuroshiro();
 ```
 
-Iniciati kuroshiro kun genero de analizilo (Rigardu la dokumenton [apidoc](#initanalyzer) por vidi pli da informacio):
+Iniciati kuroshiro kun genero de analizilo (Rigardu la dokumenton [apidoc](#initanalyzer) por vidi pli da informo):
 ```js
 // Por ĉi tiu ekzemplo, vi devus fari npm install kaj importi la "kuromoji" analizilon unue.
 import KuromojiAnalyzer from "kuroshiro-analyzer-kuromoji";
@@ -114,7 +114,7 @@ __Argumentoj__
 
 * `analyzer` - Instanco de Analizilo.
 
-__Ekzemploy__
+__Ekzemploj__
 
 ```js
 await kuroshiro.init(new KuromojiAnalyzer());
@@ -128,7 +128,7 @@ __Argumentoj__
 * `str` - Konvertvola Frazo.
 * `options` - *Optional* kuroshiro havas multajn frazajn konvertagordojn.
 
-| Agordoj | Tajpo | Defaŭlto | Informacio |
+| Agordoj | Tipo | Defaŭlto | Informo |
 |---|---|---|---|
 | to | String | "hiragana" | Target syllabary [`hiragana`, `katakana`, `romaji`] |
 | mode | String | "normal" | Convert mode [`normal`, `spaced`, `okurigana`, `furigana`] |
@@ -164,49 +164,50 @@ await kuroshiro.convert("感じ取れたら手を繋ごう、重なるのは人�
 // rezulto: <ruby>感<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>じ<ruby>取<rp>(</rp><rt>と</rt><rp>)</rp></ruby>れたら<ruby>手<rp>(</rp><rt>て</rt><rp>)</rp></ruby>を<ruby>繋<rp>(</rp><rt>つな</rt><rp>)</rp></ruby>ごう、<ruby>重<rp>(</rp><rt>かさ</rt><rp>)</rp></ruby>なるのは<ruby>人生<rp>(</rp><rt>じんせい</rt><rp>)</rp></ruby>のライン and レミリア<ruby>最高<rp>(</rp><rt>さいこう</rt><rp>)</rp></ruby>！
 </pre>
 
-### Utilecoj
+### Utilaĵoj
+
 __Ekzemploj__
 ```js
 const result = Kuroshiro.Util.isHiragana("あ"));
 ```
 #### isHiragana(char)
-Determini se eniga litero estas hiragana.
+Determini se enigita litero estas hiragana.
 
 #### isKatakana(char)
-Determini se eniga litero estas katakana.
+Determini se enigita litero estas katakana.
 
 #### isKana(char)
-Determini se eniga litero estas kana.
+Determini se enigita litero estas kana.
 
 #### isKanji(char)
-Determini se eniga litero estas kanĵio.
+Determini se enigita litero estas kanĵio.
 
 #### isJapanese(char)
-Determini se eniga litero estas Japanolingva.
+Determini se enigita litero estas Japanolingva.
 
 #### hasHiragana(str)
-Determini se eniga frazo enhavas hiraganan.
+Determini se enigita frazo enhavas hiraganan.
 
 #### hasKatakana(str)
-Determini se eniga frazo enhavas katakanan.
+Determini se enigita frazo enhavas katakanan.
 
 #### hasKana(str)
-Determini se eniga frazo enhavas kanan.
+Determini se enigita frazo enhavas kanan.
 
 #### hasKanji(str)
-Determini se eniga frazo enhavas kanĵion.
+Determini se enigita frazo enhavas kanĵion.
 
 #### hasJapanese(str)
-Determini se eniga frazo enhavas Japanolingvajn Frazojn.
+Determini se enigita frazo enhavas Japanolingvajn Frazojn.
 
 #### kanaToHiragna(str)
-Konverti enigan kanan frazon al hiragana
+Konverti enigitan kanan frazon al hiragana
 
 #### kanaToKatakana(str)
-Konverti enigan kanan frazon al katakana.
+Konverti enigitan kanan frazon al katakana.
 
 #### kanaToRomaji(str, system)
-Konverti enigan kanan frazon al romaĝio. Param `system` povas enhavi `"nippon"`, `"passport"`, `"hepburn"` (Defaŭlta: "hepburn").
+Konverti enigitan kanan frazon al romaĝio. Param `system` povas enhavi `"nippon"`, `"passport"`, `"hepburn"` (Defaŭlta: "hepburn").
 
 ## Romanaskriptkonvertaj Sistemoj
 kuroshiro povas uzi tri da Romanaskriptkonvertajn Sistemojn.
@@ -219,8 +220,8 @@ kuroshiro povas uzi tri da Romanaskriptkonvertajn Sistemojn.
 
 Por vidi la malsamecoj de la tri sistemoj, rigardu [webpage](http://jgrammar.life.coocan.jp/ja/data/rohmaji2.htm).
 
-### Informacio pri Romaĝia Konvertado
-Ne eblas tute konverti __furigana__ precize al __romaĝio__ ĉar furigana ne enhavas kompletan prononcan informacion, (Rigardu [なぜ フリガナでは ダメなのか？](https://green.adam.ne.jp/roomazi/onamae.html#naze)) do kuroshiro ne konvertas chōon dum konvertado el furigana (kana) -> romaĝio je ĉiom da sistemoj (Sed, Chōonpu ĉiam konvertas) 
+### Informo pri Romaĝia Konvertado
+Ne eblas tute konverti __furigana__ precize al __romaĝio__ ĉar furigana ne enhavas kompletan prononcan informon, (Rigardu [なぜ フリガナでは ダメなのか？](https://green.adam.ne.jp/roomazi/onamae.html#naze)) do kuroshiro ne konvertas chōon dum konvertado el furigana (kana) -> romaĝio je ĉiom da sistemoj (Sed, Chōonpu ĉiam konvertas) 
 
 *Ekzemple, vi vidos "kousi", "koushi", "koushi" dum kana konvertado de "こうし" al romaĝio 
 kiam vi uzas `nippon`, `passport`, `hepburn` sistemojn respektive*
